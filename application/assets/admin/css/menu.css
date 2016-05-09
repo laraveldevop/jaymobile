@@ -1,0 +1,90 @@
+/* ######### Drop Down DIVs CSS ######### */
+.mattblackmenu ul {
+	margin: 15px 20px 0 35px;
+	padding: 0;
+	overflow: hidden;
+	float:left;
+	border: 1px solid #ccc;
+}
+.mattblackmenu li {
+	display: inline;
+}
+.mattblackmenu li a {
+	float: left;
+	display: block;
+	text-decoration: none;
+	margin: 0 0px 0 0;
+	padding: 6px 10px; /*padding inside each tab*/
+	border-right: 1px solid #ccc; /*right divider between tabs*/
+	color:#222;
+	background: #fff;
+}
+.mattblackmenu li a:visited {
+	color:#000;
+}
+.mattblackmenu li a:hover {
+	background:#f1f1f1; /*background of tabs for hover state */
+}
+.mattblackmenu a.selected {
+	background:#f1f1f1; /*background of tab with "selected" class assigned to its LI */
+}
+.ddsubmenustyle, .ddsubmenustyle div { /*topmost and sub DIVs, respectively*/
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	left: 0;
+	top: 0;
+	list-style-type: none;
+	background: white;
+	border: 1px solid #ccc;
+	border-bottom-width: 0;
+	visibility: hidden;
+	z-index: 100;
+}
+.ddsubmenustyle ul {
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	left: 0;
+	top: 0;
+	list-style-type: none;
+	border: 0px none;
+}
+.ddsubmenustyle li a {
+	display: block;
+	width: 170px; /*width of menu (not including side paddings)*/
+	color: black;
+	background-color:#f1f1f1;
+	text-decoration: none;
+	padding: 4px 5px;
+	border-bottom: 1px solid #ccc;
+}
+* html .ddsubmenustyle li { /*IE6 CSS hack*/
+	display: inline-block;
+	width: 170px; /*width of menu (include side paddings of LI A*/
+}
+.ddsubmenustyle li a:hover {
+	background-color: #fff;
+	color: #000;
+}
+/* ######### Neutral CSS  ######### */
+
+.downarrowpointer { /*CSS for "down" arrow image added to top menu items*/
+	padding-left: 4px;
+	border: 0;
+}
+.rightarrowpointer { /*CSS for "right" arrow image added to drop down menu items*/
+	position: absolute;
+	padding-top: 3px;
+	left: 100px;
+	border: 0;
+}
+.ddiframeshim {
+	position: absolute;
+	z-index: 500;
+	background: transparent;
+	border-width: 0;
+	width: 0;
+	height: 0;
+	display: block;
+}

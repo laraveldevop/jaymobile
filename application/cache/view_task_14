@@ -1,0 +1,592 @@
+<div id="update-content">
+  <!--<div id="colright">
+    <div id="InnerhidePanel"><a href="javascript:;">&raquo;</a></div>
+    <div style="margin-left: 0px;" id="Innerpanel">
+      <div><a href="javascript:;" class="AddNew"
+	onclick="create_task();">Create
+        a new task</a></div>
+      <ul id="filesright">
+        <li class="task-list"><a href="documents">Category</a>
+          <ul class="TaskCategory">
+          </ul>
+          <ul class="template_TaskCategory" style="display: none;">
+            <li><a href="javascript:;"></a></li>
+          </ul>
+        </li>
+      </ul>
+      <div class="LeftLink"><a href="javascript:;"
+      onclick="load_content('http://192.168.1.118/ypm/tasks/see_all_tasks','#update-content')"
+      >See all Tasks</a></div>
+    </div>
+  </div>-->
+  <div style="display: none; width: 28px; opacity: 1;" id="InnershowPanel">»</div>
+  <div style=" margin-left:210px;  margin-right:0px;" id="colmiddle">
+    <div class="MidContainer">
+      
+<div class="navbar">
+  <ul id="main_menu">
+    <li class="Fristlink"><a href="javascript:;"
+		onclick="load_content('http://192.168.1.118/ypm/activity/view_activity','#update-content','state='+document.getElementById('hideState').value)"
+		 lang="activity" >Activity</a></li>
+    <li class="Tasks"><a href="javascript:;"
+		onclick="load_content('http://192.168.1.118/ypm/tasks/view_tasks','#update-content','state='+document.getElementById('hideState').value)"
+		 class="selected"  lang="tasks" >Tasks</a></li>
+    <li class=" Messages"><a href="javascript:;"
+		onclick="load_content('http://192.168.1.118/ypm/messages/view_messages','#update-content','state='+document.getElementById('hideState').value)"
+		 lang="messages" >Messages</a></li>
+    <li class="Files"><a href="javascript:;"
+		onclick="load_content('http://192.168.1.118/ypm/files/view_files','#update-content','state='+document.getElementById('hideState').value)"
+		 lang="files" >Files</a></li>
+    <li class="Calendar"><a href="javascript:;"
+		onclick="load_content('http://192.168.1.118/ypm/calendar/view_calendar','#update-content','state='+document.getElementById('hideState').value)"
+		 lang="calendar" >Calendar</a></li>
+	    <li class="People"><a href="javascript:;"
+		onclick="load_content('http://192.168.1.118/ypm/people/view_people','#update-content','state='+document.getElementById('hideState').value)"
+		 lang="people" >People</a></li>
+	    <li class="Lastlink"><a href="javascript:;"
+		onclick="load_content('http://192.168.1.118/ypm/settings/view_settings','#update-content','state='+document.getElementById('hideState').value)"
+		 lang="settings" >Settings</a></li>
+  </ul>
+</div>
+<div class="NewProjectLink">
+          <div class="bubbleInfo"><a href="javascript:;"
+          onclick="load_content('http://192.168.1.118/ypm/projects/new_project','#update-content','state='+document.getElementById('hideState').value);" 
+          class="trigger NewProjectIcon">New Project</a>
+           <div class="popup"><img src="http://192.168.1.118/ypm/application/assets/public/images/arrow-tooltip.png" alt="" title="" />New Project</div>
+          </div>
+          <div class="bubbleInfo"><a href="javascript:;"
+          onclick="create_task();"
+          class="trigger NewTaskIcon">New Task</a>
+           <div class="popup"><img src="http://192.168.1.118/ypm/application/assets/public/images/arrow-tooltip.png" alt="" title="" />New Task</div>
+          </div>
+          <div class="bubbleInfo"><a href="javascript:;"
+          onclick="create_message();" 
+          class="trigger NewMessageIcon">New Message</a>
+           <div class="popup"><img src="http://192.168.1.118/ypm/application/assets/public/images/arrow-tooltip.png" alt="" title="" />New Message</div>
+          </div>
+     </div>
+<div class="success" style="display:none;" id="success"></div>
+<div class="error" style="display:none;" id="error"></div>
+<script type="text/javascript">
+var $j = jQuery.noConflict();
+$j(function () {
+    $j('.bubbleInfo').each(function () {
+        var distance = 5;
+        var time = 100;
+        var hideDelay = 50;
+
+        var hideDelayTimer = null;
+
+        var beingShown = false;
+        var shown = false;
+        var trigger = $('.trigger', this);
+        var info = $('.popup', this).css('opacity', 0);
+
+
+        $j([trigger.get(0), info.get(0)]).mouseover(function () {
+            if (hideDelayTimer) clearTimeout(hideDelayTimer);
+            if (beingShown || shown) {
+                // don't trigger the animation again
+                return;
+            } else {
+                // reset position of info box
+                beingShown = true;
+
+                info.css({
+                    top:9,
+                    left:-65,
+                    display: 'block'
+                }).animate({
+                    top: '-=' + distance + 'px',
+                    opacity: 1
+                }, time, 'swing', function() {
+                    beingShown = false;
+                    shown = true;
+                });
+            }
+
+            return false;
+        }).mouseout(function () {
+            if (hideDelayTimer) clearTimeout(hideDelayTimer);
+            hideDelayTimer = setTimeout(function () {
+                hideDelayTimer = null;
+                info.animate({
+                    top: '-=' + distance + 'px',
+                    opacity: 0
+                }, time, 'swing', function () {
+                    shown = false;
+                    info.css('display', 'none');
+                });
+
+            }, hideDelay);
+
+            return false;
+        });
+		
+    });
+});
+var path = 'http://192.168.1.118/ypm/';
+function create_task()
+{
+	var project_id = '25';
+	if(project_id)
+		load_content('http://192.168.1.118/ypm/tasks/new_tasks/' + project_id,'#update-content','state='+document.getElementById('hideState').value);
+	else
+		alert("Please select project first");
+	
+}
+function create_message()
+{
+	var project_id = '25';
+	if(project_id)
+		load_content('http://192.168.1.118/ypm/messages/new_message/' + project_id,'#update-content','state='+document.getElementById('hideState').value);
+	else
+		alert("Please select project first");
+	
+}
+$(document).ready(function(){
+	$("#main_menu li a").click(function(){
+		$("#screenState").val($(this).attr("lang"));
+	});
+})
+</script>      <div class="export"><a href="#"><img src="http://192.168.1.118/ypm/application/assets/public/images/export.png" alt="Export" title="Export" /></a></div>
+      <div align="right">
+<!--      <a href="javascript:;" onclick="load_content('http://192.168.1.118/ypm/tasks/see_qa_tasks','#update-content');" >View QA Tasks</a> |-->
+      <a href="javascript:;" onclick="load_content('http://192.168.1.118/ypm/tasks/see_all_tasks','#update-content'); clear_project_selection();" >View All Tasks</a>
+      &nbsp;
+      Rows per page
+            <select name="Per Page" onchange="set_per_page(this);">
+              <option value="10"  selected="selected"  >10</option>
+              <option value="25"  >25</option>
+              <option value="50"  >50</option>
+              <option value="100"  >100</option>
+            </select>
+      
+      </div>
+      <div class="TaskList" style="padding-top:10px;">
+        <div class="TaskListTitle">
+          <div class="CategoryHD ddBox" onclick="openDropDown(this);">
+          Category <img src="http://192.168.1.118/ypm/application/assets/public/images/desc.png" hspace="10" alt="All" lang="OpenDD">
+          <div class="DropDownShow hidden">
+          		<input name="" value="" type="text" class="Textfield" lang="category" id="Cetegory" >
+          		<div id="SearchCategory">
+          		<ul>
+          			<li onclick="filter_category('All');"><a href="javascript:;" >All</a></li>
+          			          			<li onclick="filter_category('27');"><a href="javascript:;" >Diamond</a></li>
+          			          		</ul>
+          		</div>
+          	</div>   
+          </div>
+          <div class="Key">Key</div>
+          <div class="ProjectHD ddBox" onclick="openDropDown(this);" >
+          Project <img src="http://192.168.1.118/ypm/application/assets/public/images/desc.png" hspace="10" alt="All" lang="OpenDD">
+          <div class="DropDownShow hidden">
+          		<input name="" value="" type="text" class="Textfield" lang="project" id="Project">
+          		<div id="SearchProject">
+          		<ul>
+          			<li onclick="filter_project('All');"><a href="javascript:;">All</a></li>
+          			          			<li onclick="filter_project(25);"><a href="javascript:;">Ace Diamond</a></li>
+          			          			<li onclick="filter_project(22);"><a href="javascript:;">Action Script</a></li>
+          			          			<li onclick="filter_project(8);"><a href="javascript:;">CI Project Guide</a></li>
+          			          			<li onclick="filter_project(21);"><a href="javascript:;">The Learning Owl</a></li>
+          			          			<li onclick="filter_project(26);"><a href="javascript:;">Coupon Shark</a></li>
+          			          		</ul>
+          		</div>
+          	</div>   
+          </div>
+          <div class="Description">Subject</div>
+          <div class="All ddBox" onclick="openDropDown(this);">Status 
+          <img src="http://192.168.1.118/ypm/application/assets/public/images/desc.png" hspace="10" alt="All" lang="OpenDD">
+          	<div class="DropDownShow hidden">
+          		<ul>
+          		<li onclick="filter_status('All');"><a href="#">All</a></li>
+          		<li onclick="filter_status('Open');"><img src="http://192.168.1.118/ypm/application/assets/public/images/red-icon.png" hspace="3" alt="Open" align="absmiddle"> <a href="#">open
+          	</a></li>
+          	
+          		<li onclick="filter_status('QA');"><img src="http://192.168.1.118/ypm/application/assets/public/images/yellow-icon.png" hspace="3" alt="QA" align="absmiddle"> <a  href="#">QA
+          	</a></li>
+          	
+          		<li onclick="filter_status('Resolved');"><img src="http://192.168.1.118/ypm/application/assets/public/images/blue-icon.png" hspace="3" alt="Resolved" align="absmiddle"> <a href="#">Resolved
+          	</a></li>
+          	
+          		<li onclick="filter_status('Close');"><img src="http://192.168.1.118/ypm/application/assets/public/images/green-icon.png" hspace="3" alt="Closed" align="absmiddle"> <a href="#">Closed
+          	</a></li></ul>
+          	</div>
+          </div>
+          
+        </div>
+        <div id="contentLeft">
+          <ul class="ui-sortable TaskRow" id="AllTasks">
+          </ul>
+          <div class="template_TaskList" style="display: none;">
+            <li class="TaskLI">
+              <div class="bubbleInfo">
+                <div class="trigger">
+                  <div class="Category">
+                    <input name="" type="checkbox" value="" />
+                    <input type="hidden" class="priority">
+                    <spam>AppEngine</spam>
+                  </div>
+                  <div class="Key"><a href="javascript:;" class="Key_link"></a></div>
+                  <div class="Project"></div>
+                  <div class="Description"></div>
+                  <div class="QaStatus" title=""></div>
+                </div>
+                <div class="popup"><a class="DeleteTask" href="javascript:;"><img
+	src="http://192.168.1.118/ypm/application/assets/public/images/delete-icon.png" alt=""
+	title="" /></a> <a class="EditTask" href="javascript:;">Edit</a></div>
+              </div>
+            </li>
+          </div>
+        </div>
+        <div class="Paging"></div>
+              </div>
+    </div>
+  </div>
+</div>
+<div class="clear"></div>
+
+<script type="text/javascript">
+/* Javascript Starts */
+
+var path = "http://192.168.1.118/ypm/";
+
+$j(document).ready(function(){
+	
+	//check for message
+		
+	// task list
+		var data = {"tasks":{"tasks":[{"checked":false,"id":"119","taskCategoryId":"Diamond","key":"AD-1","projectId":"25","title":"Changes done","projectName":"Ace Diamond","status":"Open"}]}};
+	
+	//pagination
+		var page = "";
+		
+	JSON_TaskList(data,page);
+	//alert(data.toSource())
+	
+	// task category
+		var data = Array;
+		
+	//JSON_TaskCategory(data);
+	
+	$(".Paging a").click(function(){
+		var offset = $(this).attr("href").substring($(this).attr("href").lastIndexOf("/")+1,$(this).attr("href").length);
+		$(this).attr("href","javascript:;");
+		offset = parseInt(offset);
+		//offset -= 1;
+		var action = path + "tasks/view_tasks/"+offset;
+		var data = 'state='+$('#hideState').val();
+		load_content(action,'#update-content',data);
+	});
+
+	$(".DropDownShow input[type='text']").keyup(function(event){
+		var code = event.keyCode;
+		if(code != 37 && code != 38 && code != 39 && code != 40 && code != 13)
+		{
+			var val = $(this).val();
+			if($(this).attr("lang") == 'category')
+				var url = path + "tasks/search_category";
+			else
+				var url = path + "tasks/search_project";
+			var data = "name="+val;
+			if($(this).attr("lang") == 'category')
+				search_in(url,data,"#SearchCategory");
+			else
+				search_in(url,data,"#SearchProject");
+		}
+	});
+	enableKeyNavigation('Cetegory');
+	enableKeyNavigation('Project');
+
+	$('#filesright').tree({
+		expanded: 'li:first'
+	});
+	$j(function() {
+		$j("#contentLeft ul").sortable({ 
+			opacity: 0.6, 
+			cursor: 'move', 
+			update: function(event,ui) {
+				var ids = Array($(".TaskRow").length);
+			 	$(".TaskRow input[class='priority']").each(function(i){
+			 		ids[i] = $(this).val();
+			 	});						
+			 	update_task_priority(ids);
+			}								  
+		});
+	});
+	$j(function () {
+        $j('.bubbleInfo').each(function () {
+            var distance = 5;
+            var time = 100;
+            var hideDelay = 50;
+
+            var hideDelayTimer = null;
+
+            var beingShown = false;
+            var shown = false;
+            var trigger = $('.trigger', this);
+            var info = $('.popup', this).css('opacity', 0);
+
+
+            $j([trigger.get(0), info.get(0)]).mouseover(function () {
+                if (hideDelayTimer) clearTimeout(hideDelayTimer);
+                if (beingShown || shown) {
+                    // don't trigger the animation again
+                    return;
+                } else {
+                    // reset position of info box
+                    beingShown = true;
+
+                    info.css({
+                        top:9,
+                        left:-65,
+                        display: 'block'
+                    }).animate({
+                        top: '-=' + distance + 'px',
+                        opacity: 1
+                    }, time, 'swing', function() {
+                        beingShown = false;
+                        shown = true;
+                    });
+                }
+
+                return false;
+            }).mouseout(function () {
+                if (hideDelayTimer) clearTimeout(hideDelayTimer);
+                hideDelayTimer = setTimeout(function () {
+                    hideDelayTimer = null;
+                    info.animate({
+                        top: '-=' + distance + 'px',
+                        opacity: 0
+                    }, time, 'swing', function () {
+                        shown = false;
+                        info.css('display', 'none');
+                    });
+
+                }, hideDelay);
+
+                return false;
+            });
+			
+        });
+    });	
+});
+
+/* General Task Functions */
+function create_task()
+{
+	var project_id = '25';
+	if(project_id)
+		load_content('http://192.168.1.118/ypm/tasks/new_tasks/' + project_id,'#update-content','state='+document.getElementById('hideState').value);
+	else
+		alert("Please select project first");
+	
+}
+//edit task
+function editTask(id,project_id) {
+	var action = path + "tasks/new_tasks/" + project_id + "/" + id;
+	var data = 'state='+$('#hideState').val() + "&id="+id;
+	load_content(action,'#update-content',data);
+}
+
+// delete task
+function deleteTask(id) {
+	//alert(id);
+	if(confirm("Are you sure you want to delete this task ?"))
+	{
+		var action = path + "tasks/delete_task";
+		var data = 'state='+$('#hideState').val() + "&id="+id;
+		load_content(action,'#update-content',data,s_msg['success_task_delete']);
+	}
+}
+function viewTask(task_id)
+{
+	load_content(path+'tasks/view_task_detail','#update-content','task_id='+task_id)
+}
+//JSON to HTML - Task List
+function JSON_TaskList(data,page) {
+	$j(".Paging").html(page);
+	$j(".TaskRow").html($j(".template_TaskList").html());
+	var dataDir = {
+		'.TaskRow li':{
+			'task<-tasks':{
+				'@id':'task.id',
+				'.Category spam':'task.taskCategoryId',
+				'.Category input[type=checkbox]@name':'task.edit_link',
+				'.Category input[type=checkbox]@checked':'task.checked',
+				'.Key_link':'task.key',
+				'.Project':'task.projectName',
+				'.Description':'task.title',
+				'.EditTask@onclick':'editTask(\"#{task.id}\",\"#{task.projectId}\")',
+				'.DeleteTask@onclick':'deleteTask(\"#{task.id}\")',
+				'.Key_link@onclick':'viewTask(\"#{task.id}\")',
+				'.priority@value':'task.id',
+				'.QaStatus':'task.status',
+				'.QaStatus@title':'task.status',
+				'.QaStatus@class':'task.status'		
+			}
+		}
+	};
+	
+	$j('.TaskRow').render(data.tasks, dataDir);
+}
+
+// JSON to HTML - Task Category
+function JSON_TaskCategory(data) {
+	$j(".TaskCategory").html($j(".template_TaskCategory").html());
+	var dataDir = {
+		'.TaskCategory li':{
+			'category<-task_categories':{
+				'a':'category.name',
+				'a@onclick':'taskCategory(\"#{category.name}\")'
+			}
+		}
+	};
+	
+	$j('.TaskCategory').render(data, dataDir);
+}
+function filter_status(status)
+{
+	var url = path + "tasks/filter/status";
+	load_content(url,"#update-content","status="+status);
+}
+function filter_category(category)
+{
+	var url = path + "tasks/filter/category";
+	load_content(url,"#update-content","category="+category);
+}
+function filter_project(project)
+{
+	$("#filesleft li ul a").each(function(){
+			if($(this).hasClass("selected"))
+			{
+				$(this).removeClass("selected");
+				if($(this).parent().parent().prev("a").hasClass("selected"))
+				{
+					$(this).parent().parent().prev("a").removeClass("selected");
+				}
+			}
+		});
+	$("#filesleft li ul a[id='"+project+"']").addClass("selected");
+	$("#filesleft li ul a[id='"+project+"']").parent().parent().prev("a").addClass("selected");
+		
+	
+	var url = path + "tasks/filter/project";
+	load_content(url,"#update-content","project="+project);
+}
+/* General Task Functions End */
+
+// task Category - filter task by category
+function taskCategory(cat_id) {
+	load_content(path+'tasks/select_category_task','#update-content','category_id='+cat_id)
+}
+//update task priority for d&d
+function update_task_priority(ids)
+{
+	var url = path + "tasks/update_task_priority";
+	update_priority(url,ids); 
+}
+//clear left panel project selection
+function clear_project_selection()
+{
+	$("#filesleft li ul a").each(function(){
+		if($(this).hasClass("selected"))
+		{
+			$(this).removeClass("selected");
+			if($(this).parent().parent().prev("a").hasClass("selected"))
+			{
+				$(this).parent().parent().prev("a").removeClass("selected");
+			}
+		}
+	});
+}
+function set_per_page(obj)
+{
+	var url = path + "tasks/update_per_page";
+	load_content(url,"#update-content","per_page="+$(obj).val());
+}
+/*function call_get_unread_task()
+{
+	var url = path + "tasks/get_unread_task";
+	get_unread_task(url);	
+}
+setInterval(function()
+		{call_get_unread_task();},5000);*/
+function open_popup()
+{
+	$("#PopUpBoxText").slideDown();
+}
+function close_popup()
+{
+	$("#PopUpBoxText").slideUp();
+}
+
+
+/* Key Nevigation Function */
+var currentSelection = 0;
+var currentUrl = '';
+function enableKeyNavigation(id)
+{	
+	var currentId = $("#"+id).next("div").attr("id");
+	$("#"+id).keypress(function(e) {
+		switch(e.keyCode) { 
+			// User pressed "up" arrow
+			case 38:
+				navigate('up',currentId);
+			break;
+			// User pressed "down" arrow
+			case 40:
+				navigate('down',currentId);
+			break;
+			// User pressed "enter"
+			case 13:
+				if(currentUrl != '') {
+					(new Function (currentUrl + ';onclick();'))()
+				}
+			break;
+		}
+	});
+	
+	// Add data to let the hover know which index they have
+	for(var i = 0; i < $("#"+currentId+" ul li").size(); i++) {
+		$("#"+currentId+" ul li").eq(i).data("number", i);
+	}
+	
+	// Simulote the "hover" effect with the mouse
+	$("#"+currentId+" ul li").hover(
+		function () {
+			currentSelection = $(this).data("number");
+			setSelected(currentSelection,currentId);
+		}, function() {
+			$("#"+currentId+" ul li").removeClass("itemhover");
+			currentUrl = '';
+		}
+	);
+}
+function navigate(direction,id) {
+	
+	// Check if any of the menu items is selected
+	if($("#"+id+" ul .itemhover").size() == 0) {
+		currentSelection = -1;
+	}
+	
+	if(direction == 'up' && currentSelection != -1) {
+		if(currentSelection != 0) {
+			currentSelection--;
+		}
+	} else if (direction == 'down') {
+		if(currentSelection != $("#"+id+" ul li").size() -1) {
+			currentSelection++;
+		}
+	}
+	setSelected(currentSelection,id);
+}
+function setSelected(menuitem,id) {
+	$("#"+id+" ul li").removeClass("itemhover");
+	$("#"+id+" ul li").eq(menuitem).addClass("itemhover");
+	currentUrl = $("#"+id+" ul li").eq(menuitem).attr("onclick");
+}
+/* Key Nevigation Function End */
+
+/* Javascript Ends */
+</script>

@@ -1,0 +1,287 @@
+.ddSelWrap {
+    width: 100%;
+    border: 1px solid #bdd6a8;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    margin: 5px 0
+}
+
+.ddSelWrapOpen {
+    border: 1px solid #c5c5c5;
+    border-radius: 3px 3px 0 0;
+    -moz-border-radius: 3px 3px 0 0;
+    -webkit-border-radius: 3px 3px 0 0;
+    box-shadow: 0 0 3px 0 #ddd;
+    -moz-box-shadow: 0 0 3px 0 #ddd;
+    -webkit-box-shadow: 0 0 3px 0 #ddd;
+    -ms-box-shadow: 0 0 3px 0 #ddd
+}
+
+.ddOptHolderWrapper {
+    background: url(/community/my-shaadi/dropdown-bg.png) repeat-y scroll right top;
+    cursor: pointer;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px
+}
+
+.ddOptHolder {
+    height: auto;
+    overflow: hidden;
+    background: url(/community/my-shaadi/down-gray-arrow.png) no-repeat 97% center;
+    cursor: pointer
+}
+
+.ddOptHolderOpen {
+    background: url(/community/my-shaadi/up-gray-arrow.png) no-repeat 97% center
+}
+
+.ddLabelHolder p.ddLabel {
+    width: 179px;
+    font: normal 12px/26px arial;
+    padding: 0 0 0 5px;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #333;
+    background: #fff
+}
+
+.ddLabelLoading {
+    background: #fff url(/imgs/profiles/ver2/loading.gif) no-repeat 5px center !important;
+    text-indent: -9999px;
+    height: 26px;
+    width: 179px
+}
+
+.ddLabelHolderOpen {
+    padding: 0 0 3px 0;
+    width: 184px;
+    cursor: default;
+    position: relative;
+    z-index: 1
+}
+
+.ddLabelHolderOpen p.ddLabel {
+    border-bottom: solid 1px #ddd \9
+}
+
+.ddSelOptHolder {
+    display: none;
+    width: 184px;
+    margin: -2px 0 0 0;
+    background: #fff;
+    box-shadow: -3px 0 3px 0 #ddd;
+    -moz-box-shadow: -3px 0 3px 0 #ddd;
+    -webkit-box-shadow: -3px 0 3px 0 #ddd;
+    -ms-box-shadow: -3px 0 3px 0 #ddd
+}
+
+.ddSelOptHolderOpen {
+    display: block;
+    cursor: default
+}
+
+.ddSelectedVal {
+    width: 179px;
+    font: normal 12px/26px arial;
+    color: #999;
+    padding: 0 0 0 5px;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+    border-top: solid 1px #ddd \9;
+    background: #fff;
+    box-shadow: 0 0 3px 0 #ddd;
+    -moz-box-shadow: -3px 0 3px 0 #ddd;
+    -webkit-box-shadow: -3px 0 3px 0 #ddd
+}
+
+.ddSelectedOptSpan {
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    padding: 3px 17px 4px 6px;
+    margin: 1px 2px;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    color: #999;
+    font: normal 11px/12px arial;
+    background: url(/community/my-shaadi/close-default.png) no-repeat 98% center
+}
+
+.ddSelectedOptSpan:hover {
+    background: #f0f0f0 url(/community/my-shaadi/close-hover.png) no-repeat 98% center
+}
+
+.ddSelectedOptSpanHover {
+    background-image: url(/community/my-shaadi/close-hover.png);
+    background-repeat: no-repeat;
+    background-position: 98% center;
+    background-color: #f0f0f0
+}
+
+input.ddSelOptText {
+    border: 0;
+    outline: none !important;
+    padding: 0 5px;
+    color: #333;
+    font: 12px/26px arial;
+    height: 22px;
+    display: inline-block;
+    width: auto;
+    max-width: 166px;
+    height: 26px;
+    word-wrap: break-word
+}
+
+input.ddSelOptText:focus {
+    outline: none !important
+}
+
+.ddOptionHolder {
+    width: 208px;
+    margin: 1px 0 0 -1px;
+    display: none;
+    border: 1px solid #c5c5c5;
+    border-top: 0;
+    border-radius: 0 0 3px 3px;
+    -moz-border-radius: 0 0 3px 3px;
+    -webkit-border-radius: 0 0 3px 3px;
+    box-shadow: 0 0 3px 1px #ddd;
+    -moz-box-shadow: 0 0 3px 1px #ddd;
+    -webkit-box-shadow: 0 0 3px 1px #ddd;
+    -ms-box-shadow: 0 0 3px 1px #ddd
+}
+
+.ddOptionHolderOpen {
+    display: block;
+    position: absolute;
+    z-index: 1
+}
+
+.ddOptionHolder ul {
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+    display: block;
+    list-style: none;
+    max-height: 150px;
+    background: #fff
+}
+
+.ddOptionHolder ul li {
+    margin: 0;
+    padding: 0 7px;
+    color: #666;
+    cursor: pointer;
+    font: 12px/24px arial
+}
+
+.ddOptionHolder ul li.ddOptgroupLI {
+    font: bold 14px/26px arial;
+    padding: 0 7px
+}
+
+.ddOptionHolder ul li.ddOptLI {
+    padding: 0 0 0 15px
+}
+
+.ddOptionHolderLiHover {
+    background: #f3f3f3;
+    color: #666
+}
+
+/*#search_forms_content .ddOptHolderWrapper {
+    width: 100%;
+    min-height: 33px;
+    height: auto
+}
+
+#search_forms_content .ddOptHolder {
+    background: url(/community/my-shaadi/down-gray-arrow.png) no-repeat 433px center;
+    min-height: 33px
+}
+
+#search_forms_content .ddOptHolderOpen {
+    background: url(/community/my-shaadi/up-gray-arrow.png) no-repeat 433px center
+}
+
+#search_forms_content .ddSelOptHolder {
+    width: 419px;
+    min-height: 33px;
+    background: #fff;
+    margin: 0
+}
+
+#search_forms_content .ddOptionHolder {
+    width: 452px;
+    color: #666
+}
+
+#search_forms_content input.ddSelOptText {
+    height: 33px
+}
+
+#search_forms_content .ddSelectedVal {
+    width: 414px;
+    min-height: 33px;
+    font: 12px/32px arial;
+    color: #666;
+    overflow: hidden;
+    padding: 0 0 0 5px;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+#search_forms_content .ddSelectedOptSpan {
+    font: 12px/13px arial;
+    margin: 7px 2px;
+    color: #666;
+    padding: 3px 20px 4px 6px;
+    background: url(/community/my-shaadi/close-default.png) no-repeat 97% center
+}
+
+#search_forms_content .ddSelectedOptSpan:hover {
+    background: #f0f0f0 url(/community/my-shaadi/close-hover.png) no-repeat 97% center
+}
+
+#search_forms_content .ddSelectedOptSpanHover {
+    background-image: url(/community/my-shaadi/close-hover.png);
+    background-repeat: no-repeat;
+    background-position: 96% center;
+    background-color: #f0f0f0
+}
+
+#search_form_container .ddOptionHolder ul {
+    max-height: 156px
+}
+
+#search_form_container .ddOptionHolder ul li {
+    border: 1px solid transparent;
+    margin: 0 2px
+}
+
+#search_form_container .ddOptionHolder ul li.ddOptgroupLI {
+    background: #f0f0f0
+}
+
+#search_form_container .ddOptionHolderLiHover {
+    color: #666;
+    margin: 0 0 0 2px;
+    border: 1px solid #bdd6a8 !important;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    background: #fefefe;
+    background: linear-gradient(to bottom, #fefefe 0, #eee 100%);
+    background: -moz-linear-gradient(top, #fefefe 0, #eee 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fefefe), color-stop(100%, #eee));
+    background: -webkit-linear-gradient(top, #fefefe 0, #eee 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fefefe', endColorstr='#eeeeee', GradientType=0)
+}*/

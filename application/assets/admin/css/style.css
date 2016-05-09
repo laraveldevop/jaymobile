@@ -1,0 +1,281 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{font-family:Arial, Helvetica, sans-serif; font-size:14px; color:#585858; margin:0px; padding:0px; background:url(../images/body-bg.png) repeat-x top #fff;}
+
+img{border:0px;}
+
+a:focus{outline:0px;}
+
+h1,h2,h3,h4{margin:0px; padding:0px;}
+
+a{color:#666; text-decoration:none;}
+a:hover{color:#888; text-decoration: underline;}
+
+.floatleft{float:left;}
+.floatright{float:right;}
+.clear{clear:both;}
+
+.sitecontainer{width:100%; margin:0 auto; position:relative; min-width:1000px;}
+
+/****************************************************  Header Part Css Start  *************************************************/
+
+.header{ height:45px;}
+.logo{float:left; padding:15px 0 0 15px ; font-size:25px;}
+.logo strong{font-size:15px; font-weight:normal;}
+.Profielbar{ height:28px; font-size:12px; line-height:28px; text-align:right; color:#456fc2; padding-left:15px;}
+.Profielbar a{color:#456fc2;}
+.Profielbar a:hover{color:#000;}
+.ProfileImg{float:right; border-left:1px solid #beccd3; border-right:1px solid #beccd3; padding:0 5px; margin:0 15px 0 10px;}
+
+.dropdown {float:right; margin:0px; padding:1px 0 0 0; height:20px;}
+.dropdown dd, .dropdown dt, .dropdown ul { margin:0px; padding:0px;}
+.dropdown dd { position:relative; z-index:9999;}
+.dropdown dd ul { background:#fff; border:1px solid #c7c5c5; color:#222; display:none;
+				  right:15px; padding:5px 5px; position:absolute; top:-2px; 
+				  width:280px; list-style:none; text-align:left; line-height:18px;}
+.dropdown ul .ProfileImg{float:left; border:1px solid #e1e1e1; margin:0px 10px 0 5px;}
+.dropdown dd ul a{color:#456fc2; font-weight:bold;}
+.dropdown dd ul a:hover{color:#000;}
+.dropdown dd ul a strong{color:#000;}
+.dropdown dd ul small{font-size:11px; color:#898989;}
+.dropdown .SignOut{ border-top:1px solid #e1e1e1; margin-top:8px; padding:5px 0 3px 5px;}
+
+a.Dashboard:link, a.Dashboard:visited{background:url(../images/dashboard-icon01.png) no-repeat 0 0; padding:0 8px 0 25px; }
+a.Dashboard:hover{}
+
+/****************************************************  Login Part Css Start  *************************************************/
+.LoginText{text-align:center; line-height:20px; padding-top:60px; font-size:16px; color:#333;}
+.Loginpart{ margin:40px auto 50px auto; position:relative; background:#fff; border:1px solid #d7d7d7; width:30%; min-width:450px; padding:0px; color:#2d2d2d;}
+
+.LoginTitle{background:url(../images/loign-titlebg.png) repeat-x; height:44px; line-height:44px; color:#666; font-size:18px; border-bottom:1px solid #bdbcbd; margin-bottom:20px; padding-right:15px;}
+.LoginTitle .Icon{ padding:8px 15px 0 10px; float:left;}
+.Loginpart label{display:block; float:left; width:150px; text-align:right; padding:8px 15px 0 0;}
+.Loginpart .textfield{ border:1px solid #d6dbdf; height:32px; line-height:32px; color:#858585; padding:0 8px; width:220px; font-size:15px; margin-bottom:15px;}
+.Loginpart .DropList{border:1px solid #d6dbdf; height:32px; padding:3px 3px; margin-right:8px;  color:#858585; margin-bottom:12px;   font-size:13px; font-family:Arial, Helvetica, sans-serif;}
+.Loginpart .textarea{border:1px solid #d6dbdf;}
+.Loginpart .Right{ margin-left:165px;}
+.LoginBut{ padding:30px 0 20px 0;}
+
+.FormArea{ padding-top:30px;}
+.FormArea label{display:block; float:left; width:150px; text-align:right; padding:8px 15px 0 0;}
+.FormArea .textfield{ border:1px solid #d6dbdf; height:28px; line-height:28px; color:#858585; padding:0 8px; width:220px; font-size:15px; margin-bottom:15px;}
+.FormArea .textarea{ border:1px solid #d6dbdf; height:80px; line-height:28px; color:#858585; padding:0 1px 0 8px; width:227px; font-size:15px; margin-bottom:15px;}
+.FormArea span{color:#ff0000;}
+.FormButtons{margin-left:165px;}
+.DetailsLabel{color:#456FC2;text-align:left !important;font-size:16px;}
+
+.FormArea h2{font-size:14px; font-weight:normal; border-bottom:1px solid #E6E6E6; color:#456FC2; margin-top:20px; margin-bottom:15px;}
+.FormArea .DropList{border:1px solid #d6dbdf; height:28px;  color:#858585; padding:3px 3px 3px 0px; margin-left:0px; font-size:15px; margin-right:5px; margin-bottom:10px;}
+.FormArea small{text-align:right; display:block; color:red;}
+.FormArea .RedioBut{padding:4px 0; margin-bottom:10px;}
+ 
+.container .FormArea label{padding-top:4px;}
+
+ 
+.captcha{ float:left; margin-right:10px;}
+
+.GreenBut{background:url(../images/green-but.gif) repeat-x 0 0; color:#fff; text-transform:uppercase; font-weight:bold; padding:0 25px; height:33px; line-height:28px; cursor:pointer; border:0px; border-left:1px solid #4f820d;  border-right:1px solid #4f820d; margin-right:10px; text-shadow: #666 1px 1px 1px; font-size:13px;}
+.GreenBut:hover{background-position:0 -37px; border:0px; border-left:1px solid #fff;  border-right:1px solid #fff; }
+
+.BlueBut{background:url(../images/blue-but.gif) repeat-x 0 -41px; border:0px; text-transform:uppercase; border-left:1px solid #fff; margin-right:5px; border-right:1px solid #fff; height:28px; color:#fff; padding:0 10px; cursor:pointer; font-weight:bold; font-family:Arial, Helvetica, sans-serif; }
+.BlueBut:hover{background-position:0 top;  border-left:1px solid #1f5a97; border-right:1px solid #1f5a97; }
+
+.RedBut{background:url(../images/red-but.gif) repeat-x 0 -41px; border:0px; text-transform:uppercase; border-left:1px solid #fff; margin-right:5px; border-right:1px solid #fff; height:28px; color:#fff; padding:0 10px; cursor:pointer; font-weight:bold; font-family:Arial, Helvetica, sans-serif;}
+.RedBut:hover{background-position:0 top;  border-left:1px solid #821a0d; border-right:1px solid #821a0d;}
+
+.OrangeBut{background:url(../images/orange-but.gif) repeat-x 0 -41px; border:0px; text-transform:uppercase; border-left:1px solid #fff; margin-right:5px; border-right:1px solid #fff; height:28px; color:#fff; padding:0 10px; cursor:pointer; font-weight:bold; font-family:Arial, Helvetica, sans-serif;}
+.OrangeBut:hover{background-position:0 top;  border-left:1px solid #de9811; border-right:1px solid #de9811;}
+
+.WhiteBut{background:#fff; border:0px; height:33px; color:#d54937; padding:0 0px; cursor:pointer; text-decoration:underline;}
+.WhiteBut:hover{background:#fff; color:#456FC2;text-decoration:none;}
+
+
+
+a.Red-link:link, a.Red-link:visited{color:#d84a38;  text-decoration:none;}
+a.Red-link:hover{text-decoration:underline; color:#666;}
+
+a.Blue-link:link, a.Red-link:visited{color:#456FC2;  text-decoration:none;}
+a.Blue-link:hover{text-decoration:underline; color:#666;}
+
+/****************************************************  Container Part Css Start  *************************************************/
+.container{line-height:18px; overflow:hidden; padding:0 30px 30px 30px; min-height:500px;}
+
+.LeftContainer{float:left; width:180px; padding-top:20px;}
+.LeftContainer h1{border-bottom:1px solid #E6E6E6; border-top:1px solid #E6E6E6;  color:#456FC2; height:35px; line-height:35px; margin-bottom:10px; font-size:16px; padding-left:5px;}
+.LeftContainer ul{margin:0px; padding:0px; }
+.LeftContainer ul li{list-style:none; margin-bottom:2px;}
+.LeftContainer ul li a{color:#444; padding:5px 10px; display:block;}
+.LeftContainer ul li a:hover{background:#f1f1f1; text-decoration:none;}
+.LeftContainer ul li a.Selected:link, .LeftContainer ul li a.Selected:visited{background:#fff;  text-decoration:none; color:#456FC2;}
+
+.LeftContainer ul li ul{padding-left:15px;}
+.LeftContainer ul li li{ font-size:12px;}
+
+.MiddleContainer{ margin-left:10px; margin-top:20px; margin-right:10px;}
+.MiddleContainer h1{border-bottom:1px solid #E6E6E6; color:#666; font-weight:normal; height:36px; line-height:25px;}
+h1 .floatright{ font-size:14px;}
+
+
+.SearchArea{border-bottom:1px solid #E6E6E6; height:50px; line-height:50px; padding:0 10px; background:#f1f1f1; color:#000;}
+.SearchArea .textfield{border:1px solid #d6dbdf; height:28px; line-height:28px; color:#858585; padding:0 8px; width:35%; font-size:15px; margin-left:5px; margin-right:15px;}
+.DropList{border:1px solid #d6dbdf; height:28px;  color:#858585; padding:3px 3px 3px 0px; margin-left:10px; font-size:15px; margin-right:15px;}
+
+.ui-datepicker-trigger{ vertical-align:middle;}
+
+.deshbord_welcome{border-bottom:1px solid #E6E6E6; height:50px; line-height:50px;}
+.deshbord_welcome .floatright{color:#222;}
+.text_clock{border:0px; width:80px; color:#666;}
+
+.TableBg{background:#ccc; margin-top:20px;}
+.DarkBg{ background:#cacaca; color:#000;}
+.WhiteBg{background:#fff;}
+.LoingTime {padding:3px 0; white-space:nowrap;}
+
+.TableBg .textfield{border:1px solid #d6dbdf; height:28px; line-height:28px; color:#858585; padding:0 5px;  font-size:15px; margin-right:10px;}
+
+.Pagination{text-align:right; margin-top:20px;}
+.Pagination ul{margin:0px; padding:0px;}
+.Pagination ul li{list-style:none; display:inline;}
+.Pagination ul li a{background:#CACACA;  color:#000; padding:3px 7px;}
+.Pagination ul li a:hover{background:#B9E9F9; text-decoration:none;}
+.Pagination a.seleted:link, .Pagination a.seleted:visited{background:#B9E9F9; text-decoration:none; font-weight:bold; color:#000;}
+.Pagination ul li.Previous{margin-right:5px;}
+
+h1 .floatright a{color:#456FC2; font-size:14px;}
+h1 .floatright a:hover{color:#666; text-decoration:none;}
+h1 .floatright img{vertical-align:middle;}
+
+.ProfileDetils{ line-height:30px;}
+.ProfileDetils h2{font-size:14px; font-weight:normal; border-bottom:1px solid #ccc; width:500px; color:#456FC2; margin-top:20px; margin-bottom:15px;}
+.ProfileDetils span{display:block; float:left; width:120px;}
+.ProfileDetils .ProfileImg{ border:1px solid #ccc; padding:5px;}
+.ProfileDetils .FormArea{padding:0px;}
+.ProfileDetils .FormArea label{padding-top:0px;}
+
+ul.zentabs_ul{position:relative;  border-bottom:1px solid #ccc; height:28px; margin:20px 0 30px 0; padding:0px 0 0 10px;}
+ul.zentabs_ul li{float:left; list-style:none; padding:0px;}
+ul.zentabs_ul li a{padding:0 10px; line-height:25px; color:#456FC2; border:1px solid #fff;}
+ul.zentabs_ul li a:hover{text-decoration:none;}
+
+ul.zentabs_ul li a.current{border:1px solid #ccc; border-bottom:0px solid #fff; display:block; height:28px; background:#fff; color:#222; font-weight:normal;}
+.DiscountRule{margin:10px 0;}
+.DiscountRule .textfield, .DiscountRule .DropList{ margin:0px;}
+
+.StoreOverview ul{margin:0px; padding:0px;}
+.StoreOverview ul li{list-style:none; border-bottom:1px solid #ccc; margin:15px 0; height:60px;}
+.StoreOverview ul li div{float:left; text-align:center; width:20%; line-height:30px;}
+/****************************************************  Footer Part Css Start  *************************************************/
+
+.footer{background:#fff; border-top:1px solid #ccc; padding:0px 15px 0 0; color:#000; height:28px; line-height:28px; text-align:right; color:#969696; font-size:12px; margin: 50px 0;}
+.footer a{color:#969696; text-decoration:none;}
+.footer a:hover{color:#456FC2; text-decoration:underline;}
+
+
+.popup {
+	position: absolute; 
+	display: none;
+	z-index: 5000;	
+}
+.popup a{border:0px !important;}
+
+.sort_asc{
+        background:url(../images/arrow-down1.png) no-repeat right 2px; padding-right: 15px;
+        
+}
+
+.sort_desc{
+        background:url(../images/arrow-up1.png) no-repeat right 0px; padding-right: 15px;
+}
+
+.sort_main{
+        background:url(../images/arrows.png) no-repeat right 0px; padding-right: 15px ;
+        
+}
+
+.SuccessMsg{border:2px dotted #456FC2; padding:10px; color:#456FC2; font-size:20px; text-align:center; height:20px; line-height:20px; margin:10px 0;}
+
+.messageboxok{
+width:100%; 
+background:#00FF00;
+color:#000000;
+width:180px;
+font-family:tahoma;
+font-size:11px;
+border:2px solid #ddd;
+box-shadow: 0px 0px 6px #000;
+-moz-box-shadow: 0px 0px 6px #000;
+-webkit-box-shadow: 0px 0px 6px #000;
+padding:0px 0px 0px 0px;
+border-radius: 6px;
+-moz-border-radius: 6px;
+-webkit-border-radius: 6px;
+}
+
+.messageboxerror{
+width:100%; 
+background:#ee0101;
+color:#fff;
+width:180px;
+font-family:tahoma;
+font-size:11px;
+border:2px solid #ddd;
+box-shadow: 0px 0px 6px #000;
+-moz-box-shadow: 0px 0px 6px #000;
+-webkit-box-shadow: 0px 0px 6px #000;
+padding:0px 0px 0px 0px;
+border-radius: 6px;
+-moz-border-radius: 6px;
+-webkit-border-radius: 6px;
+}
+
+/* 20-12-11-dilip */
+.add_delete_btn {
+	/*margin: -102px 0 0 290px;
+    position: absolute;*/
+}
+
+.record_per_page {
+	float: right;
+    margin: -35px 0 0 0;
+}
+
+
+/*************************************** Popup Box Css Strat *************************************/
+
+.reveal-modal-bg {position: fixed; height: 100%; width: 100%; background: #000; background: rgba(0,0,0,.8); z-index: 100; display: none; top: 0; left: 0;}
+	
+.reveal-modal {visibility: hidden; top: 100px; left: 50%; margin-left: -300px; width: 520px; background: #eee url(../images/modal-gloss.png) no-repeat -200px -80px; position: absolute; z-index: 101; padding: 30px 40px 34px; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; -moz-box-shadow: 0 0 10px rgba(0,0,0,.4); -webkit-box-shadow: 0 0 10px rgba(0,0,0,.4); -box-shadow: 0 0 10px rgba(0,0,0,.4);}
+		
+.reveal-modal.small 		{ width: 200px; margin-left: -140px;}
+.reveal-modal.medium 		{ width: 400px; margin-left: -240px;}
+.reveal-modal.large 		{ width: 600px; margin-left: -340px;}
+.reveal-modal.xlarge 		{ width: 800px; margin-left: -440px;}
+	
+.reveal-modal .close-reveal-modal {font-size: 22px; line-height: .5; position: absolute; top: 8px; right: 11px; color: #cb0202; text-shadow: 0 -1px 1px rbga(0,0,0,.6); font-weight: bold; cursor: pointer;}
+.reveal-modal h1{padding-bottom:10px; border-bottom:1px solid #ccc; margin-bottom:15px;}
+ 
+/*************************************** Popup Box Css End *************************************/
+
+/*************************************** Login Popup Box Css Strat *************************************/
+
+.LoginPopup{ font-size:14px; line-height:24px;}
+.Username{float:left; padding-right:10px;}
+.Password{ float:left; padding-right:10px; }
+.extra{padding-top: 10px;}
+.extra .Username{margin-right: 52px;}
+.LoginPopup .TextField{
+	width:150px; border:1px solid #ccc;background:url(../images/bg-textbox.png) repeat-x; -webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px; height:35px; line-height:35px; color:#999; font-size:14px; padding:0 5px; margin:0 10px 0 0;}
+.LoginPopup h2{padding-top:30px; padding-bottom:15px;}
+
+.LoginPopup a{text-decoration:underline; color:#d53131;}
+.LoginPopup a:hover{color:#222; text-decoration:none;}
+
+
+/*************************************** Login Popup Box Css End *************************************/
+
+
+
+
